@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ssmmavenfirst:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ssmmavenfirst</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ssmmavenfirst.war">
+      <element id="artifact" artifact-name="ssmmavenfirst:war exploded" />
+    </root>
+  </artifact>
+</component>

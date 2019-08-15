@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dhy.dao.IUserDao" >
+    <!--<resultMap type="TbUser" id="userResultMap" >
+        <id property="userId" column="id"/>
+
+    </resultMap>-->
+    <select id="findAll" resultType="com.dhy.bean.TbUser">
+        SELECT * FROM tb_user
+    </select>
+    <select id="queryById" resultType="com.dhy.bean.TbUser">
+        SELECT * FROM tb_user where id=#{userId}
+    </select>
+    <delete id="deletePaperById" parameterType="int">
+        DELETE FROM tb_user WHERE id=#{id}
+    </delete>
+    <insert id="addUser" parameterType="com.dhy.bean.TbUser">
+        INSERT INTO tb_user(username,password) VALUE (#{username}, #{password})
+    </insert>
+    <update id="updateUser" parameterType="com.dhy.bean.TbUser">
+        UPDATE tb_user SET username = #{username} ,password = #{password} where id =#{id}
+    </update>
+    <select id="selectUsername" resultType="com.dhy.bean.TbUser">
+        select *
+        from tb_user
+        where username = #{username}
+    </select>
+
+</mapper>
